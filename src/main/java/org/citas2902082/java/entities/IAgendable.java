@@ -1,11 +1,11 @@
 package org.citas2902082.java.entities;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public interface IAgendable {
-    public void agendarCita(LocalDateTime fecha);
+    public void agendarCita(LocalDate fecha);
 
     public void cancelarCita();
 
-    public void reAgendarCita(LocalDateTime fecha);
+    public void reAgendarCita(LocalDate fecha);
 }

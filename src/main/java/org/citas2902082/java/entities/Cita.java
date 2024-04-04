@@ -1,20 +1,20 @@
 package org.citas2902082.java.entities;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Cita {
-    private Integer id;
-    private LocalDateTime fecha;
-    private Medico medico;
-    private Consultorio consultorio;
-    private Paciente paciente;
+    protected Integer id;
+    public LocalDate fecha;
+    protected Consultorio consultorio;
+    protected Paciente paciente;
 
-    public Cita(LocalDateTime fecha,
-            Medico medico,
+    public Cita(Integer id,
+            LocalDate fecha,
             Consultorio consultorio,
             Paciente paciente) {
+        this.id = id;
         this.fecha = fecha;
-        this.medico = medico;
         this.consultorio = consultorio;
         this.paciente = paciente;
     }
@@ -27,20 +27,12 @@ public class Cita {
         this.id = id;
     }
 
-    public LocalDateTime getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDateTime fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
-    }
-
-    public Medico getMedico() {
-        return medico;
-    }
-
-    public void setMedico(Medico medico) {
-        this.medico = medico;
     }
 
     public Consultorio getConsultorio() {

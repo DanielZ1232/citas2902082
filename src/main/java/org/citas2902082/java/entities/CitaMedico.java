@@ -1,5 +1,6 @@
 package org.citas2902082.java.entities;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.citas2902082.java.entities.enums.Estado;
@@ -8,25 +9,49 @@ public class CitaMedico extends Cita implements IAgendable {
     private String motivo;
     private Estado estado;
 
-    public CitaMedico(LocalDateTime fecha, Medico medico, Consultorio consultorio, Paciente paciente, String motivo) {
-        super(fecha, medico, consultorio, paciente);
+    public CitaMedico(Integer id, LocalDate fecha, Consultorio consultorio, Paciente paciente, String motivo,
+            Estado estado) {
+        super(id, fecha, consultorio, paciente);
+        this.motivo = motivo;
+        this.estado = estado;
+    }
+
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
         this.motivo = motivo;
     }
 
-    @Override
-    public void agendarCita(LocalDateTime fecha) {
+    public Estado getEstado() {
+        return estado;
+    }
 
-        super.setFecha(fecha);
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    @Override
+    public void agendarCita(LocalDate fecha) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'agendarCita'");
+    }
+
+    @Override
+    public void reAgendarCita(LocalDate fecha) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'reAgendarCita'");
+    }
+
+    @Override
+    public String toString() {
+        return "CitaMedico [motivo=" + motivo + ", estado=" + estado + "]";
     }
 
     @Override
     public void cancelarCita() {
-        this.estado = Estado.CANCELADA;
-    }
-
-    @Override
-    public void reAgendarCita(LocalDateTime fecha) {
-        super.setFecha(fecha);
+        System.out.println("Cita cancelada");
     }
 
 }

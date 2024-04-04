@@ -14,15 +14,16 @@ public class Paciente {
     public Integer numeroIdentificacion;
     public String correoElectronico;
     public Integer celular;
-    public LocalDateTime fechaNacimiento;
+    public LocalDate fechaNacimiento;
     public Double altura;
     public Double peso;
     public TipoSangre tipoSangre;
     public char factorRH;
 
-    public Paciente(String nombres, String apellidos, TipoIdentificacion tipoIdentificacion,
-            Integer numeroIdentificacion, String correoElectronico, Integer celular, LocalDateTime fechaNacimiento,
+    public Paciente(Integer id, String nombres, String apellidos, TipoIdentificacion tipoIdentificacion,
+            Integer numeroIdentificacion, String correoElectronico, Integer celular, LocalDate fechaNacimiento,
             Double altura, Double peso, TipoSangre tipoSangre, char factorRH) {
+        this.id = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.tipoIdentificacion = tipoIdentificacion;
@@ -34,6 +35,16 @@ public class Paciente {
         this.peso = peso;
         this.tipoSangre = tipoSangre;
         this.factorRH = factorRH;
+    }
+
+    public void addCita(Medico medico1) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addCita'");
+    }
+
+    public void addCitaMedico(Medico medico1) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addCitaMedico'");
     }
 
 }
